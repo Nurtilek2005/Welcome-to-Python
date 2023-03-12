@@ -7,6 +7,29 @@
 100 -> 1 (1 + 0 + 0)
 """
 
+from math import pow
+from math import floor
+
+
+def get_numbers_count(number: int) -> int:
+    count: int = 1
+    while number >= 10:
+        number = floor(number / 10)
+        count += 1
+    return count;
+
+def convert_num_to_list(number) -> list:
+    numList: list = list()
+    count: int = get_numbers_count(number)
+    for i in range(0, count):
+        next = floor(number / pow(10, i))
+        next = floor(next % 10)
+        numList.append(next)
+        
+    numList.reverse()
+    return numList
+
+
 def prompt_number(message: str, attempts: int = 3) -> int:
     while attempts > 0:
         print(message)
@@ -22,4 +45,4 @@ def prompt_number(message: str, attempts: int = 3) -> int:
 
 number: int = prompt_number("Enter number")
 
-
+print(convert_num_to_list(number))
