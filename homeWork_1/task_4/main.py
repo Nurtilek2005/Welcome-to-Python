@@ -11,3 +11,19 @@
 60 -> 10  40  10
 """
 
+def prompt_number(message: str, attempts: int = 3) -> int:
+    while attempts > 0:
+        print(message)
+        line: str = input(">>> ")
+        if not line.isnumeric():
+            print("Your input is not number!")
+            attempts -= 1
+            continue
+        return int(line)
+    print("Yours attempts is out!")
+    exit(1)
+
+kids: dict[str, int] = {"Петя": 0, "Катя": 0, "Сережа": 0}
+
+
+print(kids)
