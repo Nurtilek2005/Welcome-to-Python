@@ -10,6 +10,11 @@
 from math import pow
 from math import floor
 
+def calc_numlist_result(num_list: list[int]) -> int:
+    result: int = 0
+    for num in num_list:
+        result += num
+    return result
 
 def get_numbers_count(number: int) -> int:
     count: int = 1
@@ -44,5 +49,6 @@ def prompt_number(message: str, attempts: int = 3) -> int:
 
 
 number: int = prompt_number("Enter number")
-
-print(convert_num_to_list(number))
+num_list: list[int] = convert_num_to_list(number)
+result: int = calc_numlist_result(num_list)
+print(f"{number} -> {result}")
