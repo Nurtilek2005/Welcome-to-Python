@@ -11,6 +11,8 @@
 60 -> 10  40  10
 """
 
+from math import ceil
+
 def prompt_number(message: str, attempts: int = 3) -> int:
     while attempts > 0:
         print(message)
@@ -22,8 +24,14 @@ def prompt_number(message: str, attempts: int = 3) -> int:
         return int(line)
     print("Yours attempts is out!")
     exit(1)
-
+    
 kids: dict[str, int] = {"Петя": 0, "Катя": 0, "Сережа": 0}
 
+cranes: int = prompt_number("Введите кол-во журавликов")
+num1 = ceil(cranes / 6)
+num2 = (num1 + num1) * 2
+kids["Сережа"] = num1
+kids["Петя"] = num1
+kids["Катя"] = num2
 
 print(kids)
