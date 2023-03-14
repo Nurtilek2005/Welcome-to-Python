@@ -21,7 +21,7 @@ def get_numbers_count(number: int) -> int:
     while number >= 10:
         number = floor(number / 10)
         count += 1
-    return count;
+    return count
 
 def convert_num_to_list(number) -> list:
     numList: list = list()
