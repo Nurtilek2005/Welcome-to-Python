@@ -21,3 +21,21 @@ find_farthest_orbit(list_of_orbits), которая среди списка ор
     2.5 10
 """
 
+import math
+
+def find_farthest_orbit(list_of_orbits: list[tuple]) -> tuple:
+    max_square = 0
+    max_square_index = 0
+    for i in range(len(list_of_orbits)):
+        orbit = list_of_orbits[i]
+        orbit_x: int = orbit[0]
+        orbit_y: int = orbit[1]
+        if orbit_x == orbit_y: continue
+        square = math.pi * (orbit_x * orbit_y)
+        if max_square > square: continue
+        max_square_index = i
+        max_square = square
+    return list_of_orbits[max_square_index]
+
+orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
+print(*find_farthest_orbit(orbits))
