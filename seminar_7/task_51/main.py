@@ -17,3 +17,13 @@
     same
 """
 
+
+def same_by(func, vals):
+    return len(set(map(func, vals))) <= 1
+
+
+values = []
+if same_by(lambda x: x % 2, values):
+    print('same')
+else:
+    print('different')
