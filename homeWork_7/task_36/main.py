@@ -40,9 +40,11 @@ def print_matrix(matrix: list[list], max_len=5):
         for j in range(len(matrix[i])):
             value = matrix[i][j]
             str_len = max_len - num_length(value)
-            if j != 0: print(end=str_repeat(" ", str_len))
+            if j != 0:
+                print(end=str_repeat(" ", str_len))
             print(value, end="")
-        if i != len(matrix) - 1: print()
+        if i != len(matrix) - 1:
+            print()
 
 
 def print_operation_table(operation, num_rows=6, num_columns=6):
